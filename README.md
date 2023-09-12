@@ -1,5 +1,23 @@
 # jobss
-OBSS internship project. <br/>
+Job-seeking application that I made for OBSS 2023 Internship. <br/>
+<h1>Tech stack:</h1>
+<h3>Frontend:</h3>
+<ul>
+  <li>TypeScript</li>
+  <li>NextJS</li>
+  <li>Tailwind CSS</li>
+  <li>ShadcnUI</li>
+  <li>MaterialUI</li>
+</ul>
+<h3>Backend:</h3>
+<ul>
+  <li>Spring Boot</li>
+  <li>Spring Cloud Gateway,</li>
+  <li>Eureka</li>
+  <li>Apache Kafka</li>
+  <li>Spring Security</li>
+  <li>PostgreSQL</li>
+</ul>
 <img width="750" alt="Screenshot 2023-09-12 at 10 47 02" src="https://github.com/mericmert/jobss/assets/62773099/6fe382fc-5dd5-4420-8811-cbae10d05feb">
 <img width="750" alt="Screenshot 2023-09-12 at 10 49 00" src="https://github.com/mericmert/jobss/assets/62773099/be92eced-2a0f-46de-9bb0-e2f95fccc467">
 <img width="750" alt="Screenshot 2023-09-12 at 10 47 16" src="https://github.com/mericmert/jobss/assets/62773099/4044fa83-e1a5-4af0-96c3-ef06e83ea2c4">
