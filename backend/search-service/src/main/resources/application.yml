@@ -1,0 +1,23 @@
+spring:
+  main:
+    banner-mode: off
+  data:
+    solr:
+      host: http://localhost:8983/solr
+
+  application:
+    name: search-service
+server:
+  port: 8092
+
+eureka:
+  instance:
+    hostname: localhost
+
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka
+
+
+
+

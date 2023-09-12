@@ -1,0 +1,32 @@
+server:
+  port: 8089
+spring:
+  main:
+    banner-mode: off
+  kafka:
+    consumer:
+      bootstrap-servers: "kafka:9092"
+  application:
+    name: notification-service
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: "jobssmailsender@gmail.com"
+    password: "hjosgmhzofirufbw"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://registry:8761/eureka/
+
+
+
+

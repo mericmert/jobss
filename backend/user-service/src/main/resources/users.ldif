@@ -1,0 +1,42 @@
+dn: dc=springframework,dc=org
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: springframework
+
+dn: ou=people,dc=springframework,dc=org
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: ou=hr,ou=people,dc=springframework,dc=org
+objectclass: top
+objectclass: organizationalUnit
+ou: hr
+
+dn: ou=admin,ou=people,dc=springframework,dc=org
+objectclass: top
+objectclass: organizationalUnit
+ou: admin
+
+dn: uid=meric.bulca,ou=hr,ou=people,dc=springframework,dc=org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+ou: hr
+cn: Meric Mert Bulca
+sn: Bulca
+uid: meric.bulca
+userPassword: 123
+
+dn: uid=melih.bulca,ou=hr,ou=people,dc=springframework,dc=org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+ou: hr
+cn: Melih Berk Bulca
+sn: Bulca
+uid: melih.bulca
+userPassword: $2a$10$huHD9GXLb3AaKtftbv4w5eUEp1bekPgfxv/S0yCFnTW6hGRrUP/xm

@@ -1,0 +1,75 @@
+server:
+  port: 8084
+
+spring:
+  ldap:
+    embedded:
+      ldif: classpath:users.ldif
+      base-dn: dc=springframework,dc=org
+      port: 8389
+
+  datasource:
+    url: "jdbc:postgresql://postgres:5432/users_db"
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  cloud:
+    config:
+      uri: http://config:8888
+      fail-fast: false
+      password: ${CONFIG_SERVICE_PASSWORD}
+      username: user
+      name: user-service
+
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  config:
+    import: "optional:configserver:http://config:8888"
+  main:
+    banner-mode: off
+  application:
+    name: user-service
+  security:
+    oauth2:
+      client:
+        registration:
+          linkedin:
+            client-id: 772d27jykhjm7t
+            client-secret: wt8vn5yZwQ4ftIsR
+            client-authentication-method: post
+            authorization-grant-type: authorization_code
+            scope: openid,profile,email,w_member_social
+            redirect-uri: "http://localhost:3000/api/oauth/callback"
+            client-name: LinkedIn
+            provider: linkedin
+        provider:
+          linkedin:
+            authorization-uri: https://www.linkedin.com/oauth/v2/authorization
+            token-uri: https://www.linkedin.com/oauth/v2/accessToken
+            user-info-uri: https://api.linkedin.com/v2/me
+            user-name-attribute: id
+        env:
+          state: dkmMRqx1zeBEtwXXx4g
+          nonce: EWTxLAore2683PfsLf3w
+  kafka:
+    producer:
+      bootstrap-servers: "kafka:9092"
+
+app:
+  linkedin:
+    redirect-uri: "http://localhost:3000/api/oauth/callback"
+
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://registry:8761/eureka/

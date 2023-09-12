@@ -1,0 +1,33 @@
+
+server:
+  port: 8087
+spring:
+  datasource:
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    url: "jdbc:postgresql://postgres:5432/jobs_db"
+
+  kafka:
+    producer:
+      bootstrap-servers: "kafka:9092"
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+  main:
+    banner-mode: off
+  application:
+    name: job-service
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://registry:8761/eureka/
+

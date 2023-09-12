@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    url: jdbc:postgresql://postgres:5432/applications_db
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+  kafka:
+    consumer:
+      bootstrap-servers: "kafka:9092"
+  application:
+    name: application-service
+  cloud:
+    config:
+      uri: http://config:8888
+      fail-fast: false
+      password: ${CONFIG_SERVICE_PASSWORD}
+      username: user
+      name: application-service
+  config:
+    import: "optional:configserver:http://config:8888"
+  main:
+    banner-mode: off
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://registry:8761/eureka/
+server:
+  port: 8081
